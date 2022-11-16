@@ -111,21 +111,4 @@ public class ArbolRojinegro {
         return recorrido;
     }
 
-    public int alturaNegra() {
-        int cnt = (this.isBlack()) ? 1 : 0;
-        int altIzq = cnt;
-        int altDer = cnt;
-        if (this.getIzq() != null) {
-            altIzq = cnt + this.getIzq().alturaNegra();
-        }
-        if (this.getDer() != null) {
-            altDer = cnt + this.getIzq().alturaNegra();
-        }
-
-        return (altIzq == altDer) ? altIzq : -1;
-    }
-
-    public boolean propiedadAlturaNegra() {
-        return (this.alturaNegra() != -1) ? true : false;
-    }
 }
