@@ -64,7 +64,7 @@ public class ArbolRojinegro {
     }
 
     public void rotacionDerecha(int x) throws  Exception {
-
+        throw new OperationNotSupportedException();
     }
 
     /*
