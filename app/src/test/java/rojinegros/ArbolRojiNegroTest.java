@@ -60,7 +60,7 @@ class ArbolRojiNegroTest {
             instancia.insertar(num[i]);
         }
         assertEquals(instancia.inorden(), "-13 -10 -3 6 7 8 9 10 11 12 13 14 15 44 66 72");
-        assertTrue(altura(instancia) <= 2*Math.log(15)/Math.log(2) + 1);
+        assertTrue(altura(instancia) <= 2 * Math.log(15) / Math.log(2) + 1);
 
         int numB[] = {22, 1, 2, 3, 9, 14, 17, 0, 33, 7, 13, 19, -1, -7, -9, 50, -22, 66, -14, -32};
         ArbolRojinegro instanciaB = new ArbolRojinegro(null, null, 20, true);
@@ -70,7 +70,7 @@ class ArbolRojiNegroTest {
         }
 
         assertEquals(instanciaB.inorden(), "-32 -22 -14 -9 -7 -1 0 1 2 3 7 9 13 14 17 19 20 22 33 50 66");
-        assertTrue(altura(instancia) <= 2*Math.log(20)/Math.log(2) + 1);
+        assertTrue(altura(instancia) <= 2 * Math.log(20) / Math.log(2) + 1);
 
     }
 
