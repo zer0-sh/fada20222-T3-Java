@@ -88,9 +88,9 @@ public class ArbolRojinegro {
         }
         return null;
     }
-    // Con error aún espacios en blanco
+    
+    // Con error aún espacios en blanco linea 93
     void insertar(int x) throws Exception {
-        
     }
 
     void rotacionIzquierda(int x) throws Exception {
