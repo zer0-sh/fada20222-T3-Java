@@ -88,16 +88,15 @@ public class ArbolRojinegro {
         }
         return null;
     }
-
-    // Con error aún 
-    
-    void insertar(int valorarbol) throws Exception {
+    // Con error aún espacios en blanco
+    void insertar(int x) throws Exception {
+        
     }
 
-    void rotacionIzquierda(int valorarbol) throws Exception {
+    void rotacionIzquierda(int x) throws Exception {
     }
 
-    void rotacionDerecha(int valorarbol) throws Exception {
+    void rotacionDerecha(int x) throws Exception {
     }
 
     /*
