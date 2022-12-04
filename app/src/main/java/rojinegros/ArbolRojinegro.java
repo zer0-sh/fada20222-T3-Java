@@ -3,7 +3,7 @@ package rojinegros;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.naming.OperationNotSupportedException;
+// import javax.naming.OperationNotSupportedException; -- eliminar (?)
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -43,28 +43,61 @@ public class ArbolRojinegro {
      * Metodos a implementar
      */
 
-    public void insertar(int x) throws Exception {
-        throw new OperationNotSupportedException();
+    public void setFather(ArbolRojinegro father) {
+        if (father == null) {
+            return;
+        }
+        if (father.getValor() > this.getValor()) {
+            father.setIzq(this);
+        } else {
+            father.setDer(this);
+        }
+    }
+
+    private ArbolRojinegro getFather() {
+        return null;
     }
 
     public int maximo() throws Exception {
-        throw new OperationNotSupportedException();
+        ArbolRojinegro subarbol = this;
+        while (subarbol.getDer() != null) {
+            subarbol = subarbol.getDer();
+        }
+        return subarbol.getValor();
     }
 
     public int minimo() throws Exception {
-        throw new OperationNotSupportedException();
+        ArbolRojinegro subarbol = this;
+        while (subarbol.getIzq() != null) {
+            subarbol = subarbol.getIzq();
+        }
+        return subarbol.getValor();
     }
 
-    public ArbolRojinegro search(int x) throws Exception {
-        throw new OperationNotSupportedException();
+    public ArbolRojinegro search(int valorarbol) throws Exception {
+        ArbolRojinegro subarbol = this;
+        while (subarbol != null) {
+            if (subarbol.getValor() == valorarbol) {
+                return subarbol;
+            }
+            if (subarbol.getValor() > valorarbol) {
+                subarbol = subarbol.getIzq();
+            } else {
+                subarbol = subarbol.getDer();
+            }
+        }
+        return null;
     }
 
-    public void rotacionIzquierda(int x) throws Exception {
-        throw new OperationNotSupportedException();
+    // Con error aún 
+    
+    void insertar(int valorarbol) throws Exception {
     }
 
-    public void rotacionDerecha(int x) throws  Exception {
-        throw new OperationNotSupportedException();
+    void rotacionIzquierda(int valorarbol) throws Exception {
+    }
+
+    void rotacionDerecha(int valorarbol) throws Exception {
     }
 
     /*
