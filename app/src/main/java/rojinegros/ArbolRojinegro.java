@@ -88,7 +88,7 @@ public class ArbolRojinegro {
         }
         return null;
     }
-    
+
     public void insertar(int x) throws Exception {
         ArbolRojinegro padre = null;
         ArbolRojinegro hijo = this;
@@ -113,7 +113,7 @@ public class ArbolRojinegro {
             padre.setDer(nuevo);
         }
     }
-    
+
     public void rotacionDerecha(int nodo) {
         ArbolRojinegro padre = this.getFather();
         ArbolRojinegro hijo = this.getIzq();
