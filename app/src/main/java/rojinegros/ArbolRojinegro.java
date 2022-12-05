@@ -114,7 +114,7 @@ public class ArbolRojinegro {
         }
     }
     // rotaciones con fallo 
-    public void rotacionDerecha(int nodo) {  
+    public void rotacionDerecha(int nodo) {
         ArbolRojinegro padre = this.getFather();
         ArbolRojinegro hijo = this.getIzq();
         this.setIzq(hijo.getDer());
@@ -126,7 +126,7 @@ public class ArbolRojinegro {
             } else {
                 padre.setDer(hijo);
             }
-        }    
+        }
     }
     public void rotacionIzquierda(int nodo) {
         ArbolRojinegro padre = this.getFather();
