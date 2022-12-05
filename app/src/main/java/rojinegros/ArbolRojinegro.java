@@ -114,7 +114,7 @@ public class ArbolRojinegro {
         }
     }
 
-    public void rotacionDerecha(int nodo) {
+    /*public void rotacionDerecha(int nodo) {
         ArbolRojinegro padre = this.getFather();
         ArbolRojinegro hijo = this.getIzq();
         this.setIzq(hijo.getDer());
@@ -141,6 +141,18 @@ public class ArbolRojinegro {
                 padre.setDer(hijo);
             }
         }
+    }*/
+    public void rotacionIzquierda(int nodo) throws Exception {
+        ArbolRojinegro node = this.search(nodo);
+        ArbolRojinegro x = node.der;
+        node.der = x.izq;
+        x.izq = node;
+    }
+    public void rotacionDerecha(int nodo) throws Exception {
+        ArbolRojinegro node = this.search(nodo);
+        ArbolRojinegro x = node.izq;
+        node.izq = x.der;
+        x.der = node;
     }
     /*
      *  Area de pruebas, no modificar.
