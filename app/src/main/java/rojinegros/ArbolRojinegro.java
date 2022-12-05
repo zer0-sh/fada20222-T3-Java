@@ -88,16 +88,60 @@ public class ArbolRojinegro {
         }
         return null;
     }
-    // Con error aún espacios en blanco linea 93
-    void insertar(int x) throws Exception {
+    
+    public void insertar(int x) throws Exception {
+        ArbolRojinegro padre = null;
+        ArbolRojinegro hijo = this;
+        while (hijo != null) {
+            padre = hijo;
+            if (hijo.getValor() > x) {
+                hijo = hijo.getIzq();
+            } else {
+                hijo = hijo.getDer();
+            }
+        }
+        ArbolRojinegro nuevo = new ArbolRojinegro(null, null, x, false);
+        nuevo.setFather(padre);
+        if (padre == null) {
+            this.setValor(x);
+            this.setBlack(true);
+            this.setIzq(null);
+            this.setDer(null);
+        } else if (padre.getValor() > x) {
+            padre.setIzq(nuevo);
+        } else {
+            padre.setDer(nuevo);
+        }
     }
-
-    void rotacionIzquierda(int x) throws Exception {
+    // rotaciones con fallo 
+    public void rotacionDerecha(int nodo) {  
+        ArbolRojinegro padre = this.getFather();
+        ArbolRojinegro hijo = this.getIzq();
+        this.setIzq(hijo.getDer());
+        hijo.setDer(this);
+        hijo.setFather(padre);
+        if (padre != null) {
+            if (padre.getIzq() == this) {
+                padre.setIzq(hijo);
+            } else {
+                padre.setDer(hijo);
+            }
+        }    
     }
-
-    void rotacionDerecha(int x) throws Exception {
+    public void rotacionIzquierda(int nodo) {
+        ArbolRojinegro padre = this.getFather();
+        ArbolRojinegro hijo = this.getDer();
+        this.setDer(hijo.getIzq());
+        hijo.setIzq(this);
+        hijo.setFather(padre);
+        if (padre != null) {
+            if (padre.getIzq() == this) {
+                padre.setIzq(hijo);
+            } else {
+                padre.setDer(hijo);
+            }
+        }
     }
-
     /*
      *  Area de pruebas, no modificar.
      */
